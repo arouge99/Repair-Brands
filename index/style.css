@@ -1,0 +1,65 @@
+body {
+  font-family: Roboto, sans-serif;
+  background-color: #f6f6f6c1;
+}
+
+header {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #7e7e82;
+}
+
+.services {
+  background: #f6f6f6c1;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.brand-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 5px rgba(0,0,0,0.03);
+}
+
+.brand-logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo {
+}
+
+.go-button {
+}
+
+.hide-text {
+width: 33px;
+height: 24px;
+top: 374px;
+left: 63px;
+font-size: 16px;
+list-style: 24px;
+letter-spacing: -0.2px;
+font-weight: 500;
+
+  margin-top: 20px;
+  color: #008000;
+  font-size: 14px;
+  cursor: pointer;
+}
