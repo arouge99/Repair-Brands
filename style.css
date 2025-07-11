@@ -34,7 +34,10 @@ header {
   padding: 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   box-shadow: 0 0 5px rgba(0,0,0,0.03);
+  width: 240px;
+  height: 72px;
 }
 
 .brand-logo {
@@ -42,11 +45,7 @@ header {
   font-size: 18px;
 }
 
-.logo {
-}
 
-.go-button {
-}
 
 .hide-text {
 width: 33px;
