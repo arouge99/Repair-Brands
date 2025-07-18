@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Repair Services</title>
+ 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,6 +16,73 @@
     <header>
       <h2>Repair of equipment from various brands</h2>
     </header>
+
+
+    <!-- MOBILE SWIPER (nur sichtbar auf Mobile) -->
+<div class="swiper brand-swiper hide-on-tablet hide-on-desktop">
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide brand-card">
+      <img class="logo" src="Images/Lenovo.png" alt="Lenovo">
+      <img class="go-button" src="Images/go-button.svg" alt="Go"> 
+    </div>
+
+    <div class="swiper-slide brand-card">
+      <img class="logo" src="Images/Samsung.png" alt="Samsung">
+      <img class="go-button" src="Images/go-button.svg" alt="Go">
+    </div>
+
+    <div class="swiper-slide brand-card">
+      <img class="logo" src="Images/Apple.png" alt="Apple">
+      <img class="go-button" src="Images/go-button.svg" alt="Go">
+    </div>
+
+    <div class="swiper-slide brand-card">
+      <img class="logo" src="Images/ViewSonic.png" alt="ViewSonic">
+      <img class="go-button" src="Images/go-button.svg" alt="Go">
+    </div>
+
+    <div class="swiper-slide brand-card">
+      <img class="logo" src="Images/Bosch.png" alt="Bosch">
+      <img class="go-button" src="Images/go-button.svg" alt="Go">
+    </div>
+
+    <div class="swiper-slide brand-card">
+      <img class="logo" src="Images/hp.png" alt="hp">
+      <img class="go-button" src="Images/go-button.svg" alt="Go">
+    </div>
+
+    <div class="swiper-slide brand-card">
+      <img class="logo" src="Images/acer.png" alt="acer">
+      <img class="go-button" src="Images/go-button.svg" alt="Go">
+    </div>
+
+    <div class="swiper-slide brand-card">
+      <img class="logo" src="Images/Sony.png" alt="Sony">
+      <img class="go-button" src="Images/go-button.svg" alt="Go">
+    </div>
+
+    <div class="swiper-slide brand-card">
+      <img class="logo" src="Images/Lenovo.png" alt="Lenovo 2">
+      <img class="go-button" src="Images/go-button.svg" alt="Go">
+    </div>
+
+    <div class="swiper-slide brand-card">
+      <img class="logo" src="Images/Samsung.png" alt="Samsung 2">
+      <img class="go-button" src="Images/go-button.svg" alt="Go">
+    </div>
+
+    <div class="swiper-slide brand-card">
+      <img class="logo" src="Images/Apple.png" alt="Apple 2">
+      <img class="go-button" src="Images/go-button.svg" alt="Go">
+    </div>
+
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+
+
     <div class="brand-grid">
       <div class="brand-card">
           <img class="logo" src="Images/Lenovo.png" alt="Lenovo">
@@ -37,7 +109,7 @@
           <img class="go-button" src="Images/go-button.svg" alt="Go">
       </div>
 
-      <div class="brand-card">
+      <div class="brand-card hide-on-tablet hidden">
           <img class="logo" src="Images/hp.png" alt="hp">
           <img class="go-button" src="Images/go-button.svg" alt="Go">
       </div>
@@ -47,30 +119,96 @@
           <img class="go-button" src="Images/go-button.svg" alt="Go">
       </div>
 
-      <div class="brand-card">
+      <div class="brand-card hide-on-tablet hidden">
           <img class="logo" src="Images/Sony.png" alt="Sony">
           <img class="go-button" src="Images/go-button.svg" alt="Go">
       </div>
 
-      <div class="brand-card">
+      <div class="brand-card hide-on-tablet hide-on-desktop hidden">
           <img class="logo" src="Images/Lenovo.png" alt="Lenovo">
           <img class="go-button" src="Images/go-button.svg" alt="Go">
       </div>
 
-      <div class="brand-card">
+      <div class="brand-card hide-on-tablet hide-on-desktop hidden">
           <img class="logo" src="Images/Samsung.png" alt="Samsung">
           <img class="go-button" src="Images/go-button.svg" alt="Go">
       </div>
 
-      <div class="brand-card">
+      <div class="brand-card hide-on-tablet hide-on-desktop hidden">
           <img class="logo" src="Images/Apple.png" alt="Apple">
           <img class="go-button" src="Images/go-button.svg" alt="Go">
       </div>
 
     </div>
-    <div class="hide-text">
-      <img src="Images/expand.svg"> Hide 
-    </div>
+
+    <section class="hide-text">
+      <img src="Images/expand.svg" class="arrow-icon" alt="Toggle-icon"> 
+      <span>Show More</span>
+    </section>
   </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".hide-text");
+    const toggleText = toggleBtn.querySelector("span");
+    const toggleIcon = toggleBtn.querySelector(".arrow-icon");
+  
+    let isExpanded = false;
+  
+    toggleBtn.addEventListener("click", () => {
+      const viewportWidth = window.innerWidth;
+      let cardsToToggle;
+  
+      if (viewportWidth >= 1121) {
+        // Desktop: nur .hide-on-desktop
+        cardsToToggle = document.querySelectorAll(".brand-card.hide-on-desktop");
+      } else if (viewportWidth >= 769) {
+        // Tablet: nur .hide-on-tablet
+        cardsToToggle = document.querySelectorAll(".brand-card.hide-on-tablet");
+      } else {
+        // Mobile: optional – aktuell keine versteckten Karten
+        cardsToToggle = [];
+      }
+  
+      cardsToToggle.forEach(card => {
+        card.classList.toggle("hidden");
+      });
+  
+      isExpanded = !isExpanded;
+  
+      toggleText.textContent = isExpanded ? "Hide" : "Show More";
+      toggleIcon.classList.toggle("rotate", isExpanded);
+    });
+  </script>
+  
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  function initMobileSwiper() {
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      new Swiper(".brand-swiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    }
+  }
+
+  // Beim Laden einmal prüfen
+  window.addEventListener('load', initMobileSwiper);
+
+  // Auch bei Resize nochmal prüfen
+  window.addEventListener('resize', () => {
+    // Optional: Seite neu laden, wenn die Viewport-Breite sich deutlich ändert
+    location.reload(); // oder initMobileSwiper() neu aufrufen, wenn du dynamisch updaten willst
+  });
+</script>
+
+
+
 </body>
 </html>
