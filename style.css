@@ -3,15 +3,16 @@ body {
   background-color: #f8f8f8;
 }
 
-header {
+header h2 {
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.2px;
   line-height: 24px;
   text-transform: uppercase;
+  align-content: center;
   color: #7e7e82;
   height: 56px;
-  background: linear-gradient(#f8f8f8,white);
+  background: linear-gradient(to right, #f8f8f8,white);
   margin-bottom: 25px;
   border-top: 1px solid #41f6d7;
 }
@@ -103,7 +104,7 @@ cursor: pointer;
 
 /*mobile layout*/
 
-@media (min-width: 320px) and (max-width:768px) {
+@media (max-width:768px) {
 
   .hide-text {
     display: none;
@@ -113,9 +114,8 @@ cursor: pointer;
     display: block;
   }
 
-  .hide-on-tablet,
-  .hide-on-desktop {
-    display: none; !important
+  .brand-grid{
+    display: none !important
   }
 
   .brand-grid {
@@ -131,6 +131,14 @@ cursor: pointer;
     scroll-snap-align: start;
     width: 240px;
   }
+
+  .swiper-slide {
+    width: 240px !important;
+  }
+
+  .swiper-wrapper {
+    gap: 10px;
+  }
 }
 
 /*tablet layout*/
@@ -139,11 +147,19 @@ cursor: pointer;
   .hide-on-tablet.hidden {
     display: none;
   }
+  
+  .swiper {
+    display: none;
+  }
 }
 /*desktop layout*/
 
 @media (min-width: 1121px) {
   .hide-on-desktop.hidden {
     display: none !important;
+  }
+
+  .swiper {
+    display: none;
   }
 }

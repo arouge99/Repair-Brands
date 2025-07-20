@@ -109,12 +109,12 @@
           <img class="go-button" src="Images/go-button.svg" alt="Go">
       </div>
 
-      <div class="brand-card hide-on-tablet hidden">
+      <div class="brand-card">
           <img class="logo" src="Images/hp.png" alt="hp">
           <img class="go-button" src="Images/go-button.svg" alt="Go">
       </div>
 
-      <div class="brand-card">
+      <div class="brand-card hide-on-tablet hidden">
           <img class="logo" src="Images/acer.png" alt="acer">
           <img class="go-button" src="Images/go-button.svg" alt="Go">
       </div>
@@ -188,14 +188,14 @@
   function initMobileSwiper() {
     const isMobile = window.innerWidth <= 768;
 
-    if (isMobile) {
-      new Swiper(".brand-swiper", {
+    if (isMobile && !swiperElement) {
+      swiperElement = new Swiper(".brand-swiper", {
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
         },
       });
-    }
+    } else swiperElement = null;
   }
 
   // Beim Laden einmal prüfen
@@ -204,7 +204,9 @@
   // Auch bei Resize nochmal prüfen
   window.addEventListener('resize', () => {
     // Optional: Seite neu laden, wenn die Viewport-Breite sich deutlich ändert
-    location.reload(); // oder initMobileSwiper() neu aufrufen, wenn du dynamisch updaten willst
+    //location.reload(); // oder initMobileSwiper() neu aufrufen, wenn du dynamisch updaten willst
+
+    initMobileSwiper();
   });
 </script>
 
