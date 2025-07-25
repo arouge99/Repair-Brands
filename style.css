@@ -10,6 +10,7 @@ header h2 {
   line-height: 24px;
   text-transform: uppercase;
   align-content: center;
+  padding-left: 23px;
   color: #7e7e82;
   height: 56px;
   background: linear-gradient(to right, #f8f8f8,white);
@@ -137,7 +138,7 @@ cursor: pointer;
   }
 
   .swiper-wrapper {
-    gap: 10px;
+    justify-content: space-between;
   }
 }
 
